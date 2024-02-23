@@ -1,6 +1,6 @@
 class Item {
   String nome;
-  double valor;
+  String valor;
   bool comprado;
 
   //construtor da classe item
