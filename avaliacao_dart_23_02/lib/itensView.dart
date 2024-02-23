@@ -59,7 +59,7 @@ class ListaItensScreen extends StatelessWidget {
                       title: Text(model.itens[index].nome.trim()),
                       // Exibição do valor do item
                       subtitle: Text(model.itens[index].valor.trim()),
-                      // Checkbox para marcar a tarefa como concluída
+                      // Checkbox para marcar o item como comprado
                       trailing: Checkbox(
                         value: model.itens[index].comprado,
                         onChanged: (value) {
