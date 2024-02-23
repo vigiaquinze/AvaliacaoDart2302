@@ -15,7 +15,7 @@ class ListaItensScreen extends StatelessWidget {
       // Corpo principal do aplicativo
       body: Column(
         children: [
-          // Campo de texto para adicionar nova tarefa
+          // Campos de texto para adicionar o nome e o valor do item.
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
@@ -35,7 +35,7 @@ class ListaItensScreen extends StatelessWidget {
                 // Ícone para adicionar tarefa ao pressionar o botão
                 suffixIcon: IconButton(
                   onPressed: () {
-                    // Chamando o método adicionarTarefa do Provider para atualizar o estado
+                    // Chamando o método adicionarItem do Provider para atualizar o estado
                     Provider.of<ListaComprasController>(context, listen: false)
                         .adicionarItem(_controller.text, _controller2.text);
                     // Limpar o campo de texto após adicionar a tarefa
@@ -47,7 +47,7 @@ class ListaItensScreen extends StatelessWidget {
               ),
             ),
           ),
-          // Lista de tarefas usando um Consumer do Provider para atualização automática
+          // Lista de compras usando um Consumer do Provider para atualização automática
           Expanded(
             child: Consumer<ListaComprasController>(
               builder: (context, model, child) {
@@ -74,9 +74,9 @@ class ListaItensScreen extends StatelessWidget {
                           ;
                         },
                       ),
-                      // Exclui a tarefa ao manter pressionado
+                      // Exclui a o item da lista ao manter pressionado
                       onLongPress: () {
-                        // Chamando o método excluirTarefa do Provider para atualizar o estado
+                        // Chamando o método excluirItem do Provider para atualizar o estado
                         model.excluirItem(index);
                       },
                     );
